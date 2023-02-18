@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>My Portfolio Site</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Clickable Book Pages</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      // JavaScript code for clickable book pages
+      const leftPage = document.querySelector('.left-page');
+      const rightPage = document.querySelector('.right-page');
+
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      let pageNumber = 1;
+
+      leftPage.addEventListener('click', () => {
+        if (pageNumber < 2) {
+          leftPage.classList.add('page-turned');
+          rightPage.classList.remove('page-turned');
+          pageNumber++;
+        }
+      });
+
+      rightPage.addEventListener('click', () => {
+        if (pageNumber > 1) {
+          leftPage.classList.remove('page-turned');
+          rightPage.classList.add('page-turned');
+          pageNumber--;
+        }
+      });
+
+    </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.6.3/umd/react.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.6.3/umd/react-dom.production.min.js"></script>
-    <script src="index.js"></script>
+    <div class="book-page left-page">
+      <h1>Page 1</h1>
+      <p>This is the content of page 1.</p>
+    </div>
+    <div class="book-page right-page">
+      <h1>Page 2</h1>
+      <p>This is the content of page 2.</p>
+    </div>
+    <div class="book-nav">
+      <a href="#" class="nav-link">Page 1</a>
+      <a href="#" class="nav-link">Page 2</a>
+    </div>
   </body>
 </html>

@@ -1,3 +1,7 @@
+body{
+background: #59d6ca;
+}
+
 div.container
 {
     font-family: Raleway;
@@ -19,7 +23,7 @@ div.container a
 
 .teal
 {
-    background: #009688;
+    background: #59d6ca;
 }
 
 div.borderYtoX a:before, div.borderYtoX a:after
